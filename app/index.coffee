@@ -101,6 +101,7 @@ module.exports = class RevealGenerator extends Generator
             @fs.copyTpl @templatePath('__section.html'), @destinationPath('templates/_section.html'), {'_': _, config: @config}
 
             @fs.write @destinationPath('resources/.gitkeep'), 'Used to store static assets'
+            @fs.write @destinationPath('js/slides/.gitkeep'), 'Here the slide scripts will be stored'
 
         projectfiles: ->
             @fs.copy @templatePath('editorconfig'), @destinationPath('.editorconfig')

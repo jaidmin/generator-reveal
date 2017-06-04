@@ -113,8 +113,11 @@ module.exports = (grunt) ->
             indexTemplate = grunt.file.read 'templates/_index.html'
             sectionTemplate = grunt.file.read 'templates/_section.html'
             slides = grunt.file.readJSON 'slides/list.json'
+            scripts = grunt.file.expand 'js/slides/*.js'
 
             html = grunt.template.process indexTemplate, data:
+                scripts:
+                    scripts
                 slides:
                     slides
                 section: (slide) ->

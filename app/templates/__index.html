@@ -84,6 +84,13 @@
           });
 
         </script>
+        
+        <%% _.forEach(scripts, function(script) { %>
+            <script src="<%%= script %>">
+
+            </script>
+            <%% }); %>
+
     </body>
 
 </html>
